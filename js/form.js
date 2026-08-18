@@ -32,6 +32,8 @@ class contato {
             Enviar(data.nome);
 
             form.reset();
+
+            ativarButao();
   
 }
 
@@ -42,3 +44,23 @@ function Enviar(nome) {
         alert('Obrigado Sr(a) ' + nome + ', os seus dados foram encaminhados com sucesso!');
     }
 }
+
+
+function ativarButao () {
+    const termos = document.getElementById ("termos");
+    const novidades = document.getElementById ("novidades");
+    const btnEnviar = document.getElementById ("btnEnviar");
+
+    if (termos.checked){
+        novidades.disabled = false;
+        btnEnviar.disabled = false;
+
+    } else {
+        novidades.checked = false;
+        novidades.disabled = true;
+        btnEnviar.disabled = true;
+    }
+}
+
+
+
